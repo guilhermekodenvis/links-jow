@@ -231,25 +231,25 @@ body {
     .container {
         align-items: center;
         text-align: center;
-        padding: 80px 40px 60px;
+        padding: 60px 40px 40px;
     }
 
     .logo img {
-        width: 80px;
+        width: 60px;
     }
 
     .info {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
 
     .title {
-        font-size: 38px;
-        line-height: 44px;
+        font-size: 26px;
+        line-height: 1.16;
     }
 
     .subtitle {
-        font-size: 34px;
-        line-height: 44px;
+        font-size: 24px;
+        line-height: 1.26;
     }
 
     .subtitle br {
@@ -258,107 +258,107 @@ body {
 
     .email {
         justify-content: center;
-        margin-bottom: 36px;
+        margin-bottom: 28px;
     }
 
     .email a {
-        font-size: 38px;
-        line-height: 44px;
+        font-size: 20px;
+        line-height: 1.16;
     }
 
     .buttons {
-        max-width: 480px;
+        max-width: 380px;
     }
 
     .btn {
-        padding: 12px;
-        border-radius: 16px;
+        padding: 10px;
+        border-radius: 8px;
     }
 
     .btn-icon {
-        width: 58px;
-        height: 58px;
-        border-radius: 12px;
+        width: 52px;
+        height: 52px;
+        border-radius: 8px;
     }
 
     .btn-icon img {
-        width: 28px;
+        width: 26px;
     }
 
     .btn span {
-        font-size: 19px;
-        padding-right: 58px;
+        font-size: 17px;
+        padding-right: 52px;
     }
 
     .marquee-content span {
-        font-size: 60px;
+        font-size: 40px;
         line-height: 49px;
     }
 
     .marquee-content .asterisk {
-        width: 45px;
+        width: 32px;
     }
 
     .marquee-content {
-        gap: 24px;
-        padding-right: 24px;
+        gap: 20px;
+        padding-right: 20px;
     }
 }
 
 @media (min-width: 1024px) {
     .container {
-        padding: 100px 60px 80px;
+        padding: 70px 60px 50px;
     }
 
     .logo img {
-        width: 90px;
+        width: 65px;
     }
 
     .title {
-        font-size: 50px;
-        line-height: 58px;
+        font-size: 28px;
+        line-height: 1.16;
     }
 
     .subtitle {
-        font-size: 46px;
-        line-height: 58px;
+        font-size: 26px;
+        line-height: 1.26;
     }
 
     .email a {
-        font-size: 50px;
-        line-height: 58px;
+        font-size: 22px;
+        line-height: 1.16;
     }
 
     .buttons {
-        max-width: 520px;
+        max-width: 400px;
     }
 
     .btn-icon {
-        width: 62px;
-        height: 62px;
+        width: 54px;
+        height: 54px;
     }
 
     .btn-icon img {
-        width: 30px;
+        width: 26px;
     }
 
     .btn span {
-        font-size: 21px;
-        padding-right: 62px;
+        font-size: 18px;
+        padding-right: 54px;
     }
 
     .marquee-content span {
-        font-size: 80px;
+        font-size: 48px;
         line-height: 49px;
     }
 
     .marquee-content .asterisk {
-        width: 60px;
+        width: 38px;
     }
 
     .marquee-content {
-        gap: 32px;
-        padding-right: 32px;
+        gap: 24px;
+        padding-right: 24px;
     }
 
     .marquee {
