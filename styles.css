@@ -85,22 +85,23 @@ body {
 
 .title {
     font-family: 'Satoshi', sans-serif;
-    font-size: 50px;
+    font-size: 24px;
     font-weight: 400;
-    line-height: 58px;
     margin-bottom: 6px;
     letter-spacing: -0.06em;
+    line-height: 1.16;
 }
 
 .subtitle {
     font-family: 'Libre Baskerville', serif;
-    font-size: 46px;
+    font-size: 22px;
     font-weight: 400;
-    line-height: 58px;
+    line-height: 1.26;
     letter-spacing: -0.06em;
 }
 
 .subtitle em {
+    font-family: 'Libre Baskerville', serif;
     font-style: italic;
 }
 
@@ -123,10 +124,10 @@ body {
     font-family: 'Satoshi', sans-serif;
     color: var(--white);
     text-decoration: none;
-    font-size: 50px;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 58px;
     letter-spacing: -0.06em;
+    line-height: 1.16;
 }
 
 .email a:hover {
@@ -199,7 +200,7 @@ body {
 .marquee {
     display: flex;
     width: fit-content;
-    animation: marquee 15s linear infinite;
+    animation: marquee 24s linear infinite;
 }
 
 .marquee-content {
@@ -212,12 +213,12 @@ body {
 
 .marquee-content span {
     font-family: 'Satoshi', sans-serif;
-    font-size: 80px;
+    font-size: 32px;
     font-weight: 500;
-    line-height: 49px;
-    color: var(--black);
+    color: var(--white);
     text-transform: uppercase;
     letter-spacing: -0.06em;
+    line-height: 0.6;
 }
 
 .marquee-content .asterisk {
@@ -264,13 +265,13 @@ body {
     }
 
     .title {
-        font-size: 60px;
-        line-height: 68px;
+        font-size: 38px;
+        line-height: 44px;
     }
 
     .subtitle {
-        font-size: 52px;
-        line-height: 64px;
+        font-size: 34px;
+        line-height: 44px;
     }
 
     .subtitle br {
@@ -283,8 +284,8 @@ body {
     }
 
     .email a {
-        font-size: 60px;
-        line-height: 68px;
+        font-size: 38px;
+        line-height: 44px;
     }
 
     .buttons {
@@ -312,12 +313,12 @@ body {
     }
 
     .marquee-content span {
-        font-size: 100px;
-        line-height: 60px;
+        font-size: 60px;
+        line-height: 49px;
     }
 
     .marquee-content .asterisk {
-        width: 30px;
+        width: 45px;
     }
 
     .marquee-content {
@@ -347,18 +348,18 @@ body {
     }
 
     .title {
-        font-size: 70px;
-        line-height: 78px;
+        font-size: 50px;
+        line-height: 58px;
     }
 
     .subtitle {
-        font-size: 58px;
-        line-height: 70px;
+        font-size: 46px;
+        line-height: 58px;
     }
 
     .email a {
-        font-size: 70px;
-        line-height: 78px;
+        font-size: 50px;
+        line-height: 58px;
     }
 
     .buttons {
@@ -380,12 +381,12 @@ body {
     }
 
     .marquee-content span {
-        font-size: 120px;
-        line-height: 70px;
+        font-size: 80px;
+        line-height: 49px;
     }
 
     .marquee-content .asterisk {
-        width: 36px;
+        width: 60px;
     }
 
     .marquee-content {
@@ -394,6 +395,6 @@ body {
     }
 
     .marquee {
-        animation-duration: 18s;
+        animation-duration: 36s;
     }
 }
