@@ -1,0 +1,399 @@
+/* Reset e variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --orange: #FF5500;
+    --black: #000000;
+    --white: #FFFFFF;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--orange);
+    color: var(--white);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   PADRÃO XADREZ DO TOPO
+   ============================================ */
+.checkerboard {
+    width: 100%;
+    overflow: hidden;
+}
+
+.checker-row {
+    display: flex;
+    width: calc(100% + 60px);
+    margin-left: -30px;
+}
+
+.checker {
+    flex: 1 0 60px;
+    height: 60px;
+    min-width: 60px;
+}
+
+.checker.black {
+    background-color: var(--black);
+}
+
+.checker.orange {
+    background-color: var(--orange);
+}
+
+/* ============================================
+   CONTAINER PRINCIPAL
+   ============================================ */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 28px 40px;
+    max-width: 100%;
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+.logo {
+    margin-bottom: 16px;
+}
+
+.logo img {
+    width: 55px;
+    height: auto;
+}
+
+/* ============================================
+   INFORMAÇÕES
+   ============================================ */
+.info {
+    margin-bottom: 16px;
+}
+
+.title {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+    margin-bottom: 6px;
+    letter-spacing: -0.06em;
+}
+
+.subtitle {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 46px;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -0.06em;
+}
+
+.subtitle em {
+    font-style: italic;
+}
+
+/* ============================================
+   EMAIL
+   ============================================ */
+.email {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.arrow-icon {
+    width: 22px;
+    height: auto;
+}
+
+.email a {
+    font-family: 'Satoshi', sans-serif;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 58px;
+    letter-spacing: -0.06em;
+}
+
+.email a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   BOTÕES
+   ============================================ */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--black);
+    border-radius: 14px;
+    padding: 10px;
+    text-decoration: none;
+    color: var(--white);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.btn-icon {
+    width: 52px;
+    height: 52px;
+    background-color: var(--white);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-icon img {
+    width: 26px;
+    height: auto;
+}
+
+.btn span {
+    flex: 1;
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+    padding-right: 52px;
+}
+
+/* ============================================
+   MARQUEE / RODAPÉ
+   ============================================ */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: var(--orange);
+    padding: 20px 0;
+    margin-top: auto;
+    border-top: none;
+}
+
+.marquee {
+    display: flex;
+    width: fit-content;
+    animation: marquee 15s linear infinite;
+}
+
+.marquee-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    white-space: nowrap;
+    padding-right: 16px;
+}
+
+.marquee-content span {
+    font-family: 'Satoshi', sans-serif;
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 49px;
+    color: var(--black);
+    text-transform: uppercase;
+    letter-spacing: -0.06em;
+}
+
+.marquee-content .asterisk {
+    width: 24px;
+    height: auto;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* ============================================
+   RESPONSIVO - TABLET E DESKTOP
+   ============================================ */
+@media (min-width: 768px) {
+    .checker {
+        flex: 1 0 90px;
+        height: 90px;
+        min-width: 90px;
+    }
+
+    .checker-row {
+        width: calc(100% + 90px);
+        margin-left: -45px;
+    }
+
+    .container {
+        align-items: center;
+        text-align: center;
+        padding: 80px 40px 60px;
+    }
+
+    .logo img {
+        width: 80px;
+    }
+
+    .info {
+        margin-bottom: 20px;
+    }
+
+    .title {
+        font-size: 60px;
+        line-height: 68px;
+    }
+
+    .subtitle {
+        font-size: 52px;
+        line-height: 64px;
+    }
+
+    .subtitle br {
+        display: none;
+    }
+
+    .email {
+        justify-content: center;
+        margin-bottom: 36px;
+    }
+
+    .email a {
+        font-size: 60px;
+        line-height: 68px;
+    }
+
+    .buttons {
+        max-width: 480px;
+    }
+
+    .btn {
+        padding: 12px;
+        border-radius: 16px;
+    }
+
+    .btn-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 12px;
+    }
+
+    .btn-icon img {
+        width: 28px;
+    }
+
+    .btn span {
+        font-size: 19px;
+        padding-right: 58px;
+    }
+
+    .marquee-content span {
+        font-size: 100px;
+        line-height: 60px;
+    }
+
+    .marquee-content .asterisk {
+        width: 30px;
+    }
+
+    .marquee-content {
+        gap: 24px;
+        padding-right: 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .checker {
+        flex: 1 0 110px;
+        height: 110px;
+        min-width: 110px;
+    }
+
+    .checker-row {
+        width: calc(100% + 110px);
+        margin-left: -55px;
+    }
+
+    .container {
+        padding: 100px 60px 80px;
+    }
+
+    .logo img {
+        width: 90px;
+    }
+
+    .title {
+        font-size: 70px;
+        line-height: 78px;
+    }
+
+    .subtitle {
+        font-size: 58px;
+        line-height: 70px;
+    }
+
+    .email a {
+        font-size: 70px;
+        line-height: 78px;
+    }
+
+    .buttons {
+        max-width: 520px;
+    }
+
+    .btn-icon {
+        width: 62px;
+        height: 62px;
+    }
+
+    .btn-icon img {
+        width: 30px;
+    }
+
+    .btn span {
+        font-size: 21px;
+        padding-right: 62px;
+    }
+
+    .marquee-content span {
+        font-size: 120px;
+        line-height: 70px;
+    }
+
+    .marquee-content .asterisk {
+        width: 36px;
+    }
+
+    .marquee-content {
+        gap: 32px;
+        padding-right: 32px;
+    }
+
+    .marquee {
+        animation-duration: 18s;
+    }
+}
