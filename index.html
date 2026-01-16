@@ -13,33 +13,11 @@
 <body>
     <!-- Padrão xadrez do topo -->
     <div class="checkerboard">
-        <div class="checker-row">
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
+        <div class="checker-row" id="row1">
+            <!-- Quadrados serão gerados via JavaScript -->
         </div>
-        <div class="checker-row">
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
-            <div class="checker orange"></div>
-            <div class="checker black"></div>
+        <div class="checker-row" id="row2">
+            <!-- Quadrados serão gerados via JavaScript -->
         </div>
     </div>
 
@@ -121,5 +99,81 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Gera os quadrados dinamicamente baseado na largura da tela
+        function createCheckers() {
+            const row1 = document.getElementById('row1');
+            const row2 = document.getElementById('row2');
+            const checkerSize = 60; // Tamanho base do quadrado
+            const numCheckers = Math.ceil(window.innerWidth / checkerSize) + 2;
+            
+            row1.innerHTML = '';
+            row2.innerHTML = '';
+            
+            for (let i = 0; i < numCheckers; i++) {
+                const checker1 = document.createElement('div');
+                checker1.className = 'checker';
+                checker1.dataset.index = i;
+                row1.appendChild(checker1);
+                
+                const checker2 = document.createElement('div');
+                checker2.className = 'checker';
+                checker2.dataset.index = i;
+                row2.appendChild(checker2);
+            }
+            
+            // Inicia a animação
+            animateCheckers();
+        }
+        
+        // Array para armazenar o estado atual de cada quadrado
+        let checkerStates = [];
+        
+        function animateCheckers() {
+            const allCheckers = document.querySelectorAll('.checker');
+            const numCheckers = allCheckers.length;
+            
+            // Inicializa estados aleatórios
+            if (checkerStates.length !== numCheckers) {
+                checkerStates = [];
+                for (let i = 0; i < numCheckers; i++) {
+                    checkerStates.push(Math.random() > 0.5);
+                }
+            }
+            
+            // Aplica estados iniciais
+            allCheckers.forEach((checker, index) => {
+                checker.classList.toggle('is-black', checkerStates[index]);
+            });
+            
+            // Função para alternar quadrados aleatoriamente
+            function toggleRandomCheckers() {
+                // Seleciona 2-4 quadrados aleatórios para alternar
+                const numToToggle = Math.floor(Math.random() * 3) + 2;
+                const indicesToToggle = new Set();
+                
+                while (indicesToToggle.size < numToToggle) {
+                    indicesToToggle.add(Math.floor(Math.random() * numCheckers));
+                }
+                
+                indicesToToggle.forEach(index => {
+                    checkerStates[index] = !checkerStates[index];
+                    allCheckers[index].classList.toggle('is-black', checkerStates[index]);
+                });
+            }
+            
+            // Inicia o loop de animação
+            setInterval(toggleRandomCheckers, 600);
+        }
+        
+        // Cria os quadrados ao carregar
+        createCheckers();
+        
+        // Recria ao redimensionar a janela
+        window.addEventListener('resize', () => {
+            createCheckers();
+        });
+    </script>
 </body>
 </html>
